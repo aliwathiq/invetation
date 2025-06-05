@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #722f37;
+    font-family: 'Arial', sans-serif;
+}
+h1 {color: #efdfbb;}
+a {color:#efdfbb;
+font-size: 2em;}
+.container {
+    text-align: center;
+}
+
+.header_text {
+    font-size: 3.8em;
+    color: #722f37;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}

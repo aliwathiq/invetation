@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>invetation</title>
+  <style>
+    body {
+     margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #efdfbb;
+      text-align: center;
+      color: #722f37;
+       height: 100%;
+      overflow: hidden;
+    }
+    .container { 
+    
+        display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 20px;}
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background-color: #722f37;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      color: #efdfbb;
+      min-width: 120px;
+    }
+
+    .btn:hover {
+      background-color: #312627;
+    }
+
+    #response {
+      margin-top: 30px;
+      font-size: 1.4em;
+      display: none;
+    }
+
+    #letter {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #722f37;
+      text-decoration: none;
+      border: 2px solid #722f37;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    #letter:hover {
+      background-color: #722f37;
+      color: #efdfbb;
+    }
+     #noBtn {
+      position: absolute;
+     }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+  <source src="your-music-file.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+ 
+  <div class="container">
+    <h1>chess game?</h1>
+    <button class="btn" onclick="sayYes()">Yes</button>
+    <button class="btn" id="noBtn" onmouseover="moveButton()" ontouchstart="moveButton()">No </button>
+    <div id="response">I knew you'd say yes </div>
+    <a id="letter" href="https://www.chess.com/member/aliorsomething" target="chess.com"> Open your letter</a>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById('response').style.display = 'block';
+      document.getElementById('letter').style.display = 'inline-block';
+      document.getElementById('noBtn').style.display = 'none';
+    }
+
+    function moveButton() {
+      const btn = document.getElementById("noBtn");
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      const maxX = screenWidth - btn.offsetWidth;
+      const maxY = screenHeight - btn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    }
+  </script>
+
+</body>
+</html>
